@@ -25,7 +25,7 @@ Is a technique used to measure the performance of a system or one of its compone
 ### How can get the best performances
 
 **Auto-Boxing:** Is when we use classes that are defined as wrappers(Integer, Boolean, 
-Double, etc) in our Java code, because the JVM at the end uses the **boxing** process 
+Double, etc.) in our Java code, because the JVM at the end uses the **boxing** process 
 to convert those classes into primary variables since the JVM only operates with these 
 values.
 
@@ -67,3 +67,13 @@ the result faster.
 - For operations with little data to be processed it is better to use sequential 
   operations.
 - For operations with big data to be processed it is better to use parallel operations.  
+
+
+**Avoiding the use Reduction**<br>
+- If we have non-associative operations it is not recommended using the framework 
+  ForkJoinPool because of posible errors.
+
+> The provided reduction operation is used to join partial results and has to be 
+> associative.
+
+**Parallelism is not suited for any kind of computations**<br>
