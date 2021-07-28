@@ -37,12 +37,6 @@ How does a CPU core access data from memory?<br>
 - Each line usually has 64 bits of memory.
 - To obtain the values we have to follow the pointers that are stores in memory, this 
   knows as pointer chasing.
-
-#### Tips
-
-- If you have performance problems in your java application, before using parallel 
-  operations you should see if you have code that uses boxing and unboxing and try to 
-  eliminate it.
   
 ## Module Three: Analyzing the Fork/Join Implementation of Parallel Streams
 
@@ -77,3 +71,17 @@ the result faster.
 > associative.
 
 **Parallelism is not suited for any kind of computations**<br>
+
+## Module Five: Choosing the Right Sources fo Data to Efficiently Go Parallel
+
+#### Tips
+
+- If you have performance problems in your java application, before using parallel
+  operations you should see if you have code that uses boxing and unboxing and try to
+  eliminate it.
+- For parallel operations a list is faster than a hashMap or Set because the list is 
+  read in sequence and the HashMap or Set gets the value from the hash key.
+- Do not use parallel streams on sources of unknown size.
+- Prefer List to over Sets.
+
+> Are you sure that your threads should be used to compute your streams in parallel?
